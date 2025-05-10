@@ -1,22 +1,28 @@
-# Use an official Python runtime as a parent image
+# Use a slim base image with essential build tools
 FROM python:3.11-slim
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
+# Install build dependencies only if needed, then clean up
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    gcc \
+    && rm -rf /var/lib/apt/lists/*
+
 # Set working directory
 WORKDIR /app
 
-# Install dependencies
-COPY requirements.txt /app/
+# Install Python dependencies
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy app files
-COPY . /app/
+# Copy only essential app files (exclude venv, __pycache__, etc.)
+COPY . .
 
-# Expose the port your app runs on (e.g., 8000 for FastAPI)
+# Expose app port
 EXPOSE 8000
 
-# Run the app (adjust this if you use something else)
+# Run FastAPI app
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
