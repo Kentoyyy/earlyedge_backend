@@ -1,0 +1,112 @@
+⚠️ Disclaimer:
+This tool provides an assistive screening for potential dyslexia symptoms based on reading behavior.
+It is not a substitute for a formal diagnosis.
+For an official diagnosis, please consult a qualified specialist.
+
+
+
+ /* const handlePrintReport = () => {
+    const printContent = `
+      <html>
+        <head>
+          <style>
+            body {
+              font-family: Arial, sans-serif;
+              margin: 0;
+              padding: 0;
+              background-color: #f9f9f9;
+              color: #333;
+            }
+            .container {
+              max-width: 800px;
+              margin: 20px auto;
+              padding: 20px;
+              background: #fff;
+              border: 1px solid #ddd;
+              border-radius: 8px;
+              box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+            h1 {
+              text-align: center;
+              color: #4a90e2;
+              margin-bottom: 20px;
+            }
+            .section {
+              margin-bottom: 20px;
+            }
+            .section h2 {
+              font-size: 18px;
+              color: #555;
+              border-bottom: 2px solid #4a90e2;
+              padding-bottom: 5px;
+              margin-bottom: 10px;
+            }
+            .section p {
+              margin: 5px 0;
+              font-size: 14px;
+            }
+            .highlight {
+              font-weight: bold;
+              color: #4a90e2;
+            }
+            .accuracy {
+              font-weight: bold;
+              color: green;
+            }
+            .accuracy.incorrect {
+              color: red;
+            }
+          </style>
+        </head>
+        <body>
+          <div class="container">
+            <h1>Spelling Test Report</h1>
+            <div class="section">
+              <h2>Child Information</h2>
+              <p><span class="highlight">Name:</span> ${childName || "N/A"}</p>
+              <p><span class="highlight">Birthday:</span> ${childBirthday || "N/A"}</p>
+            </div>
+            <div class="section">
+              <h2>Test Attempts</h2>
+              ${attempts
+                .map(
+                  (attempt, index) => `
+                  <div>
+                    <p><span class="highlight">Attempt ${index + 1}:</span></p>
+                    <p><span class="highlight">Your Answer:</span> ${attempt.user_answer}</p>
+                    <p><span class="highlight">Correct Word:</span> ${attempt.correct_word}</p>
+                    <p><span class="highlight">Accuracy:</span> 
+                      <span class="accuracy ${
+                        attempt.is_correct ? "" : "incorrect"
+                      }">${attempt.is_correct ? "Correct" : "Incorrect"}</span>
+                    </p>
+                    <p><span class="highlight">Dyslexia Risk:</span> ${
+                      attempt.risk
+                    } (${attempt.dyslexia_score})</p>
+                  </div>
+                  <hr />
+                `
+                )
+                .join("")}
+            </div>
+          </div>
+        </body>
+      </html>
+    `;
+
+    const printWindow = window.open("", "_blank");
+    if (printWindow) {
+      printWindow.document.write(printContent);
+      printWindow.document.close();
+      printWindow.print();
+    } else {
+      alert("Failed to open print window.");
+    }
+  };*/
+
+ /* <button
+              onClick={handlePrintReport}
+              className="bg-green-600 text-white px-4 py-2 rounded mt-4 w-full hover:bg-green-700 transition"
+            >
+              Print Report
+            </button> */
